@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
 <h1>That page does not exists!</h1>
-<p>Go back to <a href="{{ url_for('index') }}">home</a></p>
+<p>Go back <a href="{{ url_for('index') }}">home</a></p>
+{% endblock %}
 
