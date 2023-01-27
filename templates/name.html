@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if name %}
+        <h2 class="mt-5 text-center">Hello {{ name|capitalize }}</h2>
+    {% else %}
+        <h2 class="mb-5 mt-5 text-center">What is your name?</h2>
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.name.label(class="form-label") }}
+            {{ form.name(class="form-control") }}
+
+            {{ form.submit(class="btn btn-secondary mt-2") }}
+        </form>
+    {% endif %}
+{% endblock %}
+
