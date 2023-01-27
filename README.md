@@ -14,3 +14,52 @@
 - Extend the flask template
 - Generating a URL's to the given endpoint with the given values.
 - Styling with Bootstrap 5
+
+## Day 3
+
+- Web Forms with WTF
+
+```python
+  class NameForm(FlaskForm):
+    name = StringField("What is your name?", validators=[DataRequired()])
+    submit = SubmitField("Submit")
+```
+
+## Field types:
+
+**BooleanField** <br>
+**DateField** <br>
+**DateTimeField** <br>
+**DecimalField** <br>
+**FileField** <br>
+**HiddenField** <br>
+**MultipleFileField** <br>
+**FieldList** <br>
+**FloatField** <br>
+**FormField** <br>
+**IntegerField** <br>
+**PasswordField** <br>
+**RadioField** <br>
+**SelectField** <br>
+**SelectMultipleField** <br>
+**SubmitField** <br>
+**StringField** <br>
+**TextAreaField** <br>
+**TimeField** <br>
+
+## Validators:
+
+**DataRequired** <br>
+**Email** <br>
+**EqualTo** <br>
+**InputRequired** <br>
+**IPAddress** <br>
+**Length** <br>
+**MacAddress** <br>
+**NumberRange** <br>
+**Optional** <br>
+**Regexp** <br>
+**URL** <br>
+**UUID** <br>
+**AnyOf** <br>
+**NoneOf** <br>
