@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, flash
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
@@ -42,6 +42,9 @@ def name():
         name = form.name.data
         # set the name data to an empty string so that the form is cleared
         form.name.data = ""
+
+        # flash a message to the user
+        flash("Form submitted successfully!")
     return render_template("name.html", name=name, form=form)
 
 

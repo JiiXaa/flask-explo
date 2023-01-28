@@ -22,3 +22,9 @@ for (let i = 0; i < navigationLength; i++) {
     navigationLinks[i].classList.add('active');
   }
 }
+
+// Setting timeout for the alert message to disappear after 3 seconds
+setTimeout(() => {
+  const alertMessage = document.querySelector('.alert');
+  alertMessage.style.display = 'none';
+}, 3000);

@@ -1,8 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+
     {% if name %}
         <h2 class="mt-5 text-center">Hello {{ name|capitalize }}</h2>
+        <img class="img-cat" src="{{ url_for('static', filename='img/cat.jpg') }}" alt="image of a cat">
     {% else %}
         <h2 class="mb-5 mt-5 text-center">What is your name?</h2>
         <form action="" method="POST">
