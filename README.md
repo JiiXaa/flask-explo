@@ -63,3 +63,16 @@
 **UUID** <br>
 **AnyOf** <br>
 **NoneOf** <br>
+
+## Day 4
+
+- Messages with flash (easy way for flash messages)
+  - It is possible to set timeout with JS to auto hide messages.
+  ```js
+  setTimeout(() => {
+    const alertMessage = document.querySelector('.alert');
+    alertMessage.style.display = 'none';
+  }, 3000);
+  ```
+  <br>
+- Static files exploration (CSS, JS, Images)
