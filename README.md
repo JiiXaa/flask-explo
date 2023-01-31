@@ -76,3 +76,7 @@
   ```
   <br>
 - Static files exploration (CSS, JS, Images)
+
+## Day 5
+
+- Database with SQLAlchemy
