@@ -11,24 +11,41 @@
 
     {% if name %}
         <h2 class="mt-5 text-center">Hello {{ name|capitalize }}</h2>
+        <h3>User Added!</h3>
+        <br>
+        <table class="table table-hover table-bordered table-striped">
+            {% for our_user in our_users %}
+            <tr>
+                <td>{{ our_user.id }} - {{ our_user.name }} - {{ our_user.email }}</td>
+            </tr>
+            {% endfor %}
+        </table>
     {% else %}
         <h2 class="mb-5 mt-5 text-center">User List:</h2>
-        <form action="" method="POST">
-            {{ form.hidden_tag() }}
+        <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+            <form action="" method="POST">
+                {{ form.hidden_tag() }}
 
-            {{ form.name.label(class="form-label") }}
-            {{ form.name(class="form-control") }}
+                {{ form.name.label(class="form-label") }}
+                {{ form.name(class="form-control") }}
 
-            {{ form.email.label(class="form-label") }}
-            {{ form.email(class="form-control") }}
+                {{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control") }}
 
-            {{ form.submit(class="btn btn-secondary mt-2") }}
-        </form>
-        <br><br><br>
-
-        {% for our_user in our_users %}
-        {{ our_user.id }} - {{ our_user.name }} - {{ our_user.email }} - {{ our_user.date_added }} <br>
-        {% endfor %}
+                {{ form.submit(class="btn btn-secondary mt-2") }}
+            </form>
+        </div>
+        <br>
+        <table class="table table-hover table-striped">
+            {% for our_user in our_users %}
+            <tr>
+                <td>{{ our_user.id }}</td>
+                <td>{{ our_user.name }}</td>
+                <td>{{ our_user.email }}</td>
+                <td>{{ our_user.date_added }}</td>
+            </tr>
+            {% endfor %}
+        </table>
     {% endif %}
 {% endblock %}
 

@@ -6,6 +6,7 @@ from wtforms.validators import DataRequired
 
 # database imports
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import desc
 
 # import the datetime module to get the current date and time for the database timestamp field
 from datetime import datetime
@@ -105,7 +106,7 @@ def add_user():
             form.email.data = ""
             flash("User added successfully!")
             # return redirect(url_for("users"))
-    our_users = User.query.order_by(User.date_added)
+    our_users = User.query.order_by(desc(User.date_added))
     return render_template("add_user.html", form=form, name=name, our_users=our_users)
 
 
