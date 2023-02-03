@@ -17,7 +17,8 @@ if os.path.exists("env.py"):
 # Create a Flask instance
 app = Flask(__name__)
 # Set the database URI
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
+# app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("MYSQL_URL")
 
 # Secret key is used to protect the application against modification of cookies and cross-site request forgery attacks
 app.secret_key = os.environ.get("SECRET_KEY")
